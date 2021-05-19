@@ -4,18 +4,9 @@ import List from '../List/List.js';
 import {pageContents, listData} from '../../data/dataStore';
 import Creator from '../Creator/Creator.js';
 import {settings} from '../../data/dataStore';
-import PropTypes from 'prop-types';
+
 
 class App extends React.Component {
-
-  state = {
-    lists: this.props.lists || [],
-  }
-
-
-  addList(title){
-    //TODO
-  }  
 
 
   render() {
@@ -26,7 +17,7 @@ class App extends React.Component {
         <List {...listData} />
         <Creator text={settings.listCreatorText} action={title => this.addList(title)}/>
       </main>
-    )
+    );
   }
 }
 
