@@ -32,15 +32,19 @@ export default function reducer(statePart = [], action = {}) {
         targetColumnCards.splice(dest.index, 0, targetCard);
 
         return statePart.map(card => {
+
           const targetColumnIndex = targetColumnCards.indexOf(card);
         
           if(targetColumnIndex > -1 && card.index != targetColumnIndex){
+
             return {...card, index: targetColumnIndex};
+
           } else {
             return card;
           }
         });
       } else {
+        
         let sourceColumnCards = statePart.filter(card => card.columnId == src.columnId).sort((a, b) => a.index - b.index);
 
         // remove card from sourceColumn
