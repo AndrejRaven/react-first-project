@@ -12,6 +12,7 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+  headerIcon: 'crow',
 };
 
 export const pageContents = {
@@ -146,6 +147,16 @@ const cards = [
     index: 1,
   },
 ];
+
+export const faqData = {
+  title: 'FAQ',
+  image: 'https://i.postimg.cc/598Tykxb/chinese-festival-3406583-2911998.png',
+};
+
+export const infoData = {
+  title: 'Info',
+  image: 'https://i.postimg.cc/7LXnG05H/kisspng-illustration-product-design-clip-art-creative-work-by-higeryan-dribbble-5bff7da2042c76-64737.png',
+};
 
 const initialStoreData = {
   app: {...pageContents},

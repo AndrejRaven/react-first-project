@@ -1,0 +1,14 @@
+@import '../../styles/settings.scss';
+
+.component {
+    margin-top: $base-size;
+  }
+
+.text {
+    margin: 0 auto;
+    text-align: center; 
+    width: 70%;
+    max-width: 1020px;
+    font-size: ($base-size * 1.5);
+
+}
