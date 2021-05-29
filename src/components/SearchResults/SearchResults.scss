@@ -2,17 +2,15 @@
 
 .component {
   flex-shrink: 0;
-  width: calc(33% - 12px);
+  align-items: center;
+  width: calc(50% - 12px);
   background: $color-light;
-  margin: 0 $base-size $base-size 0;
+  margin: $base-size auto;
   padding: ($base-size * 1.5);
   border-radius: $radius;
   box-shadow: 0 ($base-size / 4) 0 rgba(0,0,0,0.3);
   color: $color-dark;
-
-  &:last-child {
-    margin: 0 0 $base-size 0; 
-  }
+  
 }
 
 .title {
@@ -21,17 +19,38 @@
   margin: 0 0 ($base-size * 1.5) 0;
 }
 
-.icon > * {
-  padding-right: $base-size;
-  color: $color-warning;
-  font-size: ($base-size * 2);
-  vertical-align: middle;
+.description {
+  text-align: center;
+  font-size: ($base-size * 1.5);
+  padding: $base-size;
 }
 
 .cards {
   padding: ($base-size / 2) 0;
 }
 
+.card {
+  position: relative;
+  background: $color-light;
+  border: 1px solid lighten($color-dark, 60%);
+  padding: $base-size;
+  margin: 0 0 $base-size 0;
+  border-radius: $radius;
+}
+
+.link {
+  float: right;
+  color: $color-dark;
+  text-decoration: none;
+  font-weight: 400;
+  transition: $transition;
+        &:hover {
+          color: $color-success;
+        }
+        &:global(.active) {
+          color: $color-warning;
+        }
+}
 @media (max-width: 767px) {
 
   .component {

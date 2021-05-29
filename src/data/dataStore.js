@@ -126,36 +126,42 @@ const columns = [
 const cards = [
   {
     id: 'card-1',
+    listId: 'list-1',
     columnId: 'column-1',
     title: 'This Is Going to Hurt',
     index: 0,
   },
   {
     id: 'card-2',
+    listId: 'list-1',
     columnId: 'column-1',
     title: 'Interpreter of Maladies',
     index: 1,
   },
   {
     id: 'card-3',
+    listId: 'list-1',
     columnId: 'column-2',
     title: 'Harry Potter',
     index: 0,
   },
   {
     id: 'card-4',
+    listId: 'list-1',
     columnId: 'column-2',
     title: 'Star Wars',
     index: 1,
   },
   {
     id: 'card-5',
+    listId: 'list-1',
     columnId: 'column-3',
     title: 'The Witcher',
     index: 0,
   },
   {
     id: 'card-6',
+    listId: 'list-1',
     columnId: 'column-3',
     title: 'Skyrim',
     index: 1,
@@ -170,6 +176,12 @@ export const faqData = {
 export const infoData = {
   title: 'Info',
   image: 'https://i.postimg.cc/7LXnG05H/kisspng-illustration-product-design-clip-art-creative-work-by-higeryan-dribbble-5bff7da2042c76-64737.png',
+};
+
+export const searchResult = {
+  title: 'Results',
+  image: 'https://i.postimg.cc/7LXnG05H/kisspng-illustration-product-design-clip-art-creative-work-by-higeryan-dribbble-5bff7da2042c76-64737.png',
+  description: 'cards with search letter(s)',
 };
 
 const initialStoreData = {

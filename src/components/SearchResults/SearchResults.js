@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './SearchResults.scss';
 import PropTypes from 'prop-types';
-import Card from '../Card/Card.js';
+// import Card from '../Card/Card.js';
+import Hero from '../Hero/Hero.js';
 import Container from '../Container/Container';
-import {Droppable} from 'react-beautiful-dnd';
-import {DragDropContext} from 'react-beautiful-dnd';
+import {searchResult} from '../../data/dataStore';
+import { Link } from 'react-router-dom';
 
 class SearchResults extends React.Component {
 
@@ -17,53 +18,25 @@ class SearchResults extends React.Component {
 
   render(){
 
-    const {cards, moveCard} = this.props;
+    const {cards} = this.props;
 
-    const moveCardHandler = result => {
-      if(
-        result.destination
-          &&
-          (
-            result.destination.index != result.source.index
-            ||
-            result.destination.droppableId != result.source.droppableId
-          )
-      ){
-        moveCard({
-          id: result.draggableId,
-          dest: {
-            index: result.destination.index,
-            columnId: result.destination.droppableId,
-          },
-          src: {
-            index: result.source.index,
-            columnId: result.source.droppableId,
-          },
-        });
-      }
-    };
 
     return(
       <Container>
-        <DragDropContext onDragEnd={moveCardHandler}>
-          <section className={styles.component}>
-            <Droppable droppableId={'search-id'}>
-              {provided => (
-                <div
-                  className={styles.cards}
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                >
-                  {cards.map(cardData => (
-                    <Card key={cardData.id} {...cardData} />
-                  ))}
-
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </section>
-        </DragDropContext>
+        
+        <section className={styles.component}>
+          <Hero imgSource={searchResult.image} titleText={searchResult.title}/>
+          <div className={styles.description}>
+            {searchResult.description}          
+          </div>
+          {cards.map(cardData => (
+            <div key={cardData.id} className={styles.card}>
+              {cardData.title}
+              <Link className={styles.link} to={`/list/${cardData.listId}`}>{cardData.listId}/{cardData.columnId}</Link>
+            </div>        
+          ))} 
+        </section>
+        
       </Container>
     );
   }

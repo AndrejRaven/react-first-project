@@ -8,9 +8,14 @@ class Card extends React.Component {
       title: PropTypes.string, 
       id: PropTypes.string,
       index: PropTypes.number,
+      columnId: PropTypes.string,
+      listId: PropTypes.string,
     }
+
+    
     render() {
       const {title, id, index} = this.props;
+  
       return (
         <Draggable draggableId={id} index={index}>
           {(provided) => (
@@ -21,6 +26,7 @@ class Card extends React.Component {
               ref={provided.innerRef}
             >
               {title}
+              
             </article>
           )}
         </Draggable>
